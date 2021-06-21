@@ -1,0 +1,747 @@
+---
+title: "Basic Operations in R"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+##### introduction to R########
+### creating Vectors/Variables####
+
+X <- 10:20 # 10 to 20.
+```{r}
+X <-  10:20 # 10 to 20. #it is used to assign vectors to X just like = in python.
+```
+```{r}
+X
+```
+```{r}
+y <- c(1,2,3,4,5,6,7,8,9,10,11) # c is a function and it means combine
+```
+```{r}
+y
+```
+####### arithmetic operations #######
+```{r}
+X+y #addition
+```
+```{r}
+y=X+2 # updating y
+```
+```{r}
+y
+```
+```{r}
+z <- y*3
+```
+
+```{r}
+z
+```
+
+```{r}
+subtotal=z-6
+```
+```{r}
+subtotal
+```
+```{r}
+answer <- subtotal/3
+```
+```{r}
+answer
+```
+```{r}
+X
+```
+```{r}
+answer=((X+2)*3-6)/3
+```
+```{r}
+answer
+```
+```{r}
+x=10
+```
+```{r}
+lab=((x+2)*3-6)/3
+```
+```{r}
+lab
+```
+### Data Types and assigning data to a vector/variable#####
+```{r}
+cards=c('tiffany','funlola','yemi','makwin','fatimat') # c is a function to concatenate
+```
+
+```{r}
+cards
+```
+```{r}
+typeof(cards) # to check for the data type.
+```
+```{r}
+number <- c(3000,NA,4000,3000,5000)
+```
+```{r}
+typeof(number)
+```
+```{r}
+play=c(cards,number)
+play
+```
+```{r}
+typeof(play)
+```
+```{r}
+monster=c(T,T,T,F,T,T,T,T,T)
+```
+```{r}
+typeof(monster)
+```
+```{r}
+print(monster)
+```
+```{r}
+number=c(number,monster)
+```
+```{r}
+number
+```
+```{r}
+typeof(number)
+```
+```{r}
+print(number)
+```
+```{r}
+coerce.check <- c(play,monster)
+coerce.check
+```
+```{r}
+typeof(coerce.check)
+```
+```{r}
+y <- -7
+```
+
+```{r}
+rm(y) #to remove a given variable from the Global eniroment
+```
+
+```{r}
+ls()  #to check for active variables in the Global enviroment
+```
+```{r}
+number <-c(1,7,6,4,9,10,12,23)
+print(number)
+```
+
+```{r}
+intern_name <-c("tiffany","funlola","yemi","makwin","fatmimat")
+print(intern_name)
+```
+
+```{r}
+num_vec_1 <- c(1, 4, 9)
+num_vec_2 <- c("1","4","9")
+```
+
+```{r}
+typeof(num_vec_1)
+typeof(num_vec_2)
+```
+```{r}
+scores <- c(3000, 4000, 5000, 6000, 7000)
+names(scores) # used to check for column names
+names(scores) <- intern_name # making the intern name the column names
+attributes(scores)
+names(scores)
+#names and attributes carry out the same function.but like info and dtypes in python.attributes returns more than column names 
+scores
+```
+```{r}
+intern_name <- c("tiffany" = 3000, "funlola"=4000, "yemi" = 5000, "makwin" = 6000, "fatmimat" = 7000)
+print(intern_name)
+```
+
+Another Method 
+```{r}
+age <- c(21, 26, 32, 31, 28)
+attributes(age)
+```
+```{r}
+names(age) <- c("tiffany","funlola","yemi","makwin","fatmimat")
+age
+```
+#Descriptive Statistics
+
+```{r}
+number
+sum(number) # sum of all the numbers
+```
+```{r}
+mean(number
+     )
+```
+```{r}
+median(number)
+```
+
+```{r}
+length(number) # no of entries
+```
+```{r}
+var(number)
+```
+```{r}
+sd(number)
+```
+```{r}
+round(sd(number)) # rounding up the sd
+```
+```{r}
+class_score <- c("Clara" = 97, "Solomon" = 100, "Alex" = 67, "Dr Tito" = 78, "Duchima" = 76, "Steve" = 78, "Stepen" = 89, "Dr T" = 87, "Chinwe" = 78, "Victor" = 79, "Patricia" = 79, "Precious" = 84)
+print(class_score)
+```
+
+```{r}
+mean(class_score)
+median(class_score)
+sd(class_score)
+var(class_score)
+```
+
+```{r}
+args(sample) #display the aurgement of a fuction i.e other parameters that can be used with the fuction
+```
+```{r}
+args(mean)
+```
+```{r}
+?sample # ? does the same thing as shift tab in python
+
+```
+
+
+```{r}
+?mean
+```
+
+```{r}
+x <- c(0:10, 50)
+xm <- mean(x)
+c(xm, mean(x, trim = 0.10))
+```
+
+```{r}
+args(median)
+
+```
+```{r}
+args(median)
+```
+
+```{r}
+number <- c(3000, NA, 4000, 3000, 5000)
+number
+```
+```{r}
+mean(number) 
+median(number)
+```
+
+```{r}
+mean(number, na.rm = TRUE) # na.rm means without missing values
+median(number, na.rm = TRUE)
+```
+# Slicing and Indexing a Vector in R
+```{r}
+age <- c(22, 25, 28, 29, 21)
+```
+
+
+```{r}
+name<- c("tiffany","funlola","yemi","makwin","fatmimat")
+```
+
+```{r}
+name[4] # 4th entry
+```
+```{r}
+name[-1] # return all entries except the 1st one
+```
+
+```{r}
+name[c(1,3,5)]
+
+```
+
+```{r}
+name[c(-1,-3)]
+```
+```{r}
+name[-c(1,3)]
+```
+```{r}
+name
+```
+```{r}
+names(age) <- name
+age
+```
+
+```{r}
+age["tiffany"]
+```
+
+```{r}
+age[c("fatmimat", "yemi")]
+```
+```{r}
+age[1:3]
+```
+```{r}
+age[c(1,2,3)]
+```
+#Creating a vector using 'seq'
+```{r}
+weight <- seq(10, 100, by = 10) # sequence of 10-100 but difference of 10
+weight
+```
+```{r}
+weight[-(4:6)]
+```
+
+```{r}
+weight[weight>70]
+```
+
+```{r}
+weight[weight>50]
+```
+#Working with Matrices in R
+```{r}
+weight <- seq(10, 120, by = 10)
+dim(weight)
+dim(weight) <- c(3,4) # the dimension just like reshape
+weight
+```
+
+```{r}
+mtr <- matrix(1:12, nrow = 3)
+mtr
+```
+
+```{r}
+mtr <- matrix(1:12, ncol = 4)
+mtr
+```
+
+```{r}
+mtr <- matrix(1:12, ncol = 4, byrow = T) #it means arrange it rowwise
+mtr
+```
+
+```{r}
+math <- c(61, 53, 34, 45, 55)
+ict <- c(73, 58, 67, 59, 86)
+```
+
+```{r}
+subject <- cbind(math,ict) #binding by column i.e concat the ict comes to meet the maths
+subject
+```
+```{r}
+rownames(subject) <- c("2015", "2016", "2017", "2018", "2019") # function for assiging row names
+subject
+```
+
+```{r}
+subject <- t(subject) #Transpose i.e make column the rows and rows the column
+subject
+```
+
+```{r}
+english <- c(76, 56, 87, 95, 67) 
+```
+
+```{r}
+subject <- rbind(subject, english) # rbind means rowbind
+subject
+```
+# Creating a Matrix with a single line of code
+```{r}
+weight <- matrix(c(66.5, 56.0, 75.0, 65.4, 67.9, 70.9, 81.2, 50.0, 76.3 ),
+        nrow = 3, byrow = T,
+        dimnames = list(c("tiffany", "makwin",  "fatmimat"),
+                        c("2019", "2020", "2021")))
+
+weight
+```
+```{r}
+data <- matrix(1:10, nrow = 4, ncol = 4)
+data
+```
+
+```{r}
+Gideon <- matrix(c(2:10), nrow = 4, ncol = 4, byrow = T,
+                      dimnames = list(c("row_1", "row_2", "row_3", "row_4"),
+                                     c("col_1", "col_2", "col_3", "col_4")))
+Gideon                     
+```
+### indexing elements in matrix
+# matrices are natural extensions of vectors.
+# matrices are multidimensional vectors.
+
+```{r}
+unit <- c(231,323,450,500,600,700,654,321,170)
+sales=matrix(unit,nrow=3,byrow=T)
+sales
+```
+```{r}
+sales[1,3]
+```
+```{r}
+sales[1] # single indexing
+```
+```{r}
+sales[1,] # row indexing
+```
+```{r}
+sales[,3,drop=F] # column indexing. drop=F makes it return it as a column
+```
+```{r}
+sales[,3]
+```
+
+```{r}
+sales[4]
+```
+```{r}
+j=sales[c(1,3),]
+j
+```
+```{r}
+my_sales=j
+my_sales
+```
+```{r}
+colnames(sales)=c('2019','2020','2012')
+rownames(sales)=c('tiffany','funlola','yemi')
+sales
+```
+```{r}
+sales['tiffany',]
+```
+```{r}
+sales[,'2020']
+```
+```{r}
+sales[,'2020',drop=F]
+```
+#### matrix Arithmetic###
+```{r}
+shola <- matrix(c(66.5, 56.0, 75.0, 65.4, 67.9, 70.9, 81.2, 50.0, 76.3 ),
+        nrow = 3, byrow = T,
+        dimnames = list(c("tiffany", "funlola",  "fatimat"),
+                        c("2019", "2020", "2021")))
+shola
+```
+```{r}
+scaled_shola=shola/100
+scaled_shola
+```
+```{r}
+height <- matrix(c(1.3,6.4,4.5,1.6,2.4,3.3,4.6,1.2,3.0),nrow=3)
+height
+```
+```{r}
+bmi=shola/(height)^2
+bmi
+```
+```{r}
+colSums(shola) #its a function used to sum up all the entries of a column
+```
+```{r}
+rowSums(shola)
+```
+```{r}
+colMeans(shola) # used to calculate the average weight of all the entries of the column i.e in each year
+```
+```{r}
+Total=colSums(shola)
+Average=colMeans(shola)
+metrics=rbind(shola,Total,Average)
+metrics
+```
+```{r}
+A=matrix(c(13,20,27,51,45,71,19,60,70),nrow=3)
+A
+``` 
+```{r}
+A[c(2,3),1,drop=F]
+```
+```{r}
+A[c(2,3),1]
+```
+```{r}
+A[c(2,3),c(2,3)]
+```
+```{r}
+A[c(1,3),c(1,2)]
+```
+```{r}
+A[5]
+```
+###### Relational and Logical Operations in R#####
+```{r}
+12>2
+```
+```{r}
+2>20
+```
+```{r}
+print(3!=3)
+```
+```{r}
+print(3==3)
+```
+```{r}
+TRUE==TRUE
+FALSE==TRUE
+TRUE!=FALSE
+```
+#### The 'and' operator returns false when either of the values is false and the 'or' operator returns true when either of the values is true.
+```{r}
+w=9
+w<12
+w>6
+(w<12) & (w>6)
+```
+##### using the 'not' operator. not operator is !
+```{r}
+!TRUE
+!(4<3)
+```
+#### If,Else and Elif statement
+```{r}
+number=-3
+if(number<0){
+  print('Your number is Negative')}
+```
+```{r}
+v=-1
+if(v<0){
+  v=v*-1
+  print(v)}       
+```
+```{r}
+v=-1
+if(v<0){
+  v=v*-1
+ifelse(v>0,'Yes','No')}
+```
+```{r}
+ifelse(1==1,'Yes','No')
+ifelse(1==0,'Yes','No')
+ifelse(3>=1,'True','False')
+```
+```{r}
+totest=c(1,1,0,1,0,1)
+ifelse(totest==1,'Yes','No')
+ifelse(totest==1,totest*3,totest)
+ifelse(totest==1,totest*3,'zero')
+```
+```{r}
+v=-7
+if(v<0){
+  v <- v*-1
+  print('i have made your object positive,hey,look!')
+  print(v)
+} else{
+  print('your object is already positive')}
+```
+```{r}
+v <- -7
+if(v<0){
+  print('The object was less than o,but i am working in it,')
+  print('wait for it......')
+  v <- v*-1
+  print('Your object is now positive,check it out!')
+  print(v)
+} else if(v==0){
+  print('Your object is exactly zero.')
+} else if((v>0)&(v<12)){
+  print('The object is positive and less than 12.')
+} else{
+  print('Your object is positive and larger than 12.')
+  print(v)
+}
+
+```
+```{r}
+z=c(1,0,-3,5)
+if (z>3){
+  print('Dooshima has a good handle of R,')
+} else{
+  print('she is still a learner.')
+}
+```
+```{r}
+z <- 'jamal'
+if(z=='patricia'){
+  print('patricia is a DataLab intern;let her in.')
+} else if (z!='patricia'){
+  print('i do not know this person')
+  }
+```
+
+```{r}
+temp <- 20
+if(temp<=0){
+  print('The weather is freezing!')
+} else if(temp<=10){
+  print('The weather is cold!')
+} else if(temp<=20){
+  print('The weather is cool')
+} else if(temp<=30){
+  print('The weather is warm')
+} else {
+  print('It is hot,mehn!')
+  }
+```
+###### Taking input from user in R###
+taking input using 'readline()'.this command will prompt you to input a desired value
+```{r}
+age <- readline(prompt='Enter your age,please: ');
+age <- as.integer(age);
+print(paste('Your age is',age))
+
+```
+##### functions in R
+```{r}
+say.hello <- function(){
+  print('Hello World')
+}
+say.hello()
+```
+```{r}
+power=function(x,y){
+  result <- x^y
+  print(paste(x,'raised to the power', y, 'is',result))}
+power(10,3 )
+```
+ ###### Task######
+```{r}
+HCF=function(a,b){
+  if(a>b){
+    lesser=b
+  }else{
+    lesser=a}
+  for(i in 1:lesser){
+     if((a%%i==0) & (b %%i==0)){
+        HCF=i
+     }
+  }      
+  print(paste('The HCF of',a, 'and',b, 'is', HCF))}
+HCF(60,72)
+  
+```
+```{r}
+perimeter=function(l,b){
+  result=2*(l+b)
+  print(paste('The perimeter of the rectangle ABCD is', result))}
+perimeter(15,7)
+```
+
+
+
+```{r}
+
+```
+```{r}
+
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+i```{r}
+```
+
+
+
+
+
